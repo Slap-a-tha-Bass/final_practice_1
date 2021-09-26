@@ -24,3 +24,11 @@ export interface Books {
 export interface ReqUsers extends Request {
     user?: Users
 }
+export interface Books {
+    id: number,
+    categoryid: number,
+    title: string,
+    author: string,
+    price: number,
+    _created: Date
+}
