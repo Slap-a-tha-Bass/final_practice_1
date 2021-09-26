@@ -1,5 +1,4 @@
 import * as express from 'express';
-import { Books } from '../../../../types';
 import db_books from '../../db/queries/books';
 
 const router = express.Router();
