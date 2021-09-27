@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 import { Books } from '../../../types';
 import BookCard from '../components/BookCard';
 import { apiService } from '../utils/api-service';
 
-const Books = () => {
+const BookDetails = () => {
     const { id } = useParams<{ id: string }>();
     const [books, setBooks] = useState<Books[]>([]);
 
     useEffect(() => {
-        apiService('/api/books')
+        apiService(`/api/books/${id}`)
             .then(data => setBooks(data));
-    }, [])
-
+    }, []);
+  
     return (
         <div>
             {books.map((book) => (
-                <Link key={book.id} to={`/books/${book.id}`}><BookCard {...book}  /></Link>
+                <BookCard {...book} key={book.id} isPreview /> 
             ))}
         </div>
     )
 }
 
-export default Books;
+export default BookDetails;

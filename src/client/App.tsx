@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import BookDetails from './views/BookDetails';
 import Books from './views/Books';
 import Home from './views/Home';
 
@@ -17,6 +18,9 @@ const App = (props: AppProps) => {
 				</Route>
 				<Route exact path="/books">
 					<Books />
+				</Route>
+				<Route exact path="/books/:id">
+					<BookDetails />
 				</Route>
 			</Switch>
 		</BrowserRouter>

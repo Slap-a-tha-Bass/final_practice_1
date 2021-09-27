@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
         res.status(500).json({ message: 'Problem posting your book', error: error.message });
     }
 }); 
-router.put('/:id', async (req, res) => {
+router.put('/:id/edit', async (req, res) => {
     const { id } = req.params;
     const { title, author, price, categoryid } = req.body;
     const updatedBook = { title, author, price, categoryid };
@@ -42,7 +42,7 @@ router.put('/:id', async (req, res) => {
         res.status(500).json({ message: 'Problem editing your book', error: error.message });
     }
 }); 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id/delete', async (req, res) => {
     const { id } = req.params;
     try {
         const book = await db_books.delete_book(Number(id));
