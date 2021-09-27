@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        const book = await db_books.get_one_book(Number(id));
+        const [book] = await db_books.get_one_book(Number(id));
         res.json(book);
     } catch (error) {
         res.status(500).json({ message: 'Problem fetching one book', error: error.message });

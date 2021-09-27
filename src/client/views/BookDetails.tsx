@@ -6,18 +6,16 @@ import { apiService } from '../utils/api-service';
 
 const BookDetails = () => {
     const { id } = useParams<{ id: string }>();
-    const [books, setBooks] = useState<Books[]>([]);
+    const [books, setBooks] = useState<Books>(null);
 
     useEffect(() => {
         apiService(`/api/books/${id}`)
             .then(data => setBooks(data));
-    }, []);
+    }, [id]);
   
     return (
         <div>
-            {books.map((book) => (
-                <BookCard {...book} key={book.id} isPreview /> 
-            ))}
+            <BookCard {...books} key={id} isPreview />
         </div>
     )
 }

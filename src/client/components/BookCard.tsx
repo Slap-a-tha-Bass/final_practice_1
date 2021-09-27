@@ -30,7 +30,7 @@ const BookCard = (props: Books) => {
                             <div className="card-text text-light text-center">{props.price}</div>
                         </div>
                         <div className="d-flex justify-content-center mb-3">
-                            {props.isPreview && <Link to="/edit" className="btn btn-light btn-sm mx-3">Edit</Link>}
+                            {props.isPreview && <Link to={`/edit/${props.id}`} className="btn btn-light btn-sm mx-3">Edit</Link>}
                             {props.isPreview && <button onClick={handleDelete} className="btn btn-light btn-sm mx-3">Delete</button>}
                         </div>
                     </div>
