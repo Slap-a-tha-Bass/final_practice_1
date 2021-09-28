@@ -8,7 +8,6 @@ const router = express.Router();
 router.get('/', passport.authenticate('jwt'), async (req: ReqUsers, res) => {
     try {
             res.json(`Welcome, ${req.user.email}`);
-            console.log(req.user)
     } catch (error) {
         res.status(500).json({ message: 'Problem fetching all users', error: error.message });
     }

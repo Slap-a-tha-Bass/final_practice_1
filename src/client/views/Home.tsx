@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Books, Categories } from '../../../types';
 import { apiService } from '../utils/api-service';
 
@@ -50,7 +51,8 @@ const Home = () => {
                             ))}
                         </select>
                         <div className="d-flex justify-content-center">
-                            <button onClick={handleSubmit} className="btn btn-light mt-3">Submit</button>
+                            <button onClick={handleSubmit} className="btn btn-light m-3">Submit</button>
+                            <Link className="btn btn-light m-3" to="/profile">Profile</Link>
                         </div>
                     </form>
                 </div>
