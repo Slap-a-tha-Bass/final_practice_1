@@ -13,7 +13,7 @@ const Register = () => {
         e.preventDefault();
         apiService('/auth/register', 'POST', { email, password, name: first_name, role: 'guest' })
             .then(token => {
-                localStorage.setItem('token', token),
+                localStorage.setItem('token', token.token),
                 history.push("/profile")
             })
     }
