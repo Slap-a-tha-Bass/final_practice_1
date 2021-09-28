@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Private from './components/Private';
 import BookDetails from './views/BookDetails';
 import Books from './views/Books';
 import EditDetails from './views/EditDetails';
 import Home from './views/Home';
+import Login from './views/Login';
+import Profile from './views/Profile';
+import Register from './views/Register';
 
-/* HOOK REACT EXAMPLE */
 const App = (props: AppProps) => {
 
 	return (
@@ -26,6 +28,15 @@ const App = (props: AppProps) => {
 				<Route exact path="/edit/:id">
 					<EditDetails />
 				</Route>
+				<Route exact path="/login">
+					<Login />
+				</Route>
+				<Route exact path="/register">
+					<Register />
+				</Route>
+				<Private exact path="/profile">
+					<Profile />
+				</Private>
 			</Switch>
 		</BrowserRouter>
 	);

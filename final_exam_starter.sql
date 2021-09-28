@@ -38,7 +38,4 @@ INSERT INTO Books VALUES (2,2,'The Hobbit','J.R.R. Tolkien',9.99,'2019-02-26 13:
 SELECT * FROM Books;
 SELECT * FROM Categories;
 
-CREATE USER 'bookstore_admin'@'localhost' IDENTIFIED WITH mysql_native_password BY 'bookstore_admin';
-GRANT ALL PRIVILEGES ON final_exam_starter.* TO 'bookstore_admin'@'localhost';
-
 

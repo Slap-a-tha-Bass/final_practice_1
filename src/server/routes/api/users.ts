@@ -1,12 +1,14 @@
 import * as express from 'express';
+import * as passport from 'passport';
+import { ReqUsers } from '../../../../types';
 import db_users from '../../db/queries/users';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', passport.authenticate('jwt'), async (req: ReqUsers, res) => {
     try {
-        const users = await db_users.get_users();
-        res.json(users);
+            res.json(`Welcome, ${req.user.email}`);
+            console.log(req.user)
     } catch (error) {
         res.status(500).json({ message: 'Problem fetching all users', error: error.message });
     }

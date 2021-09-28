@@ -13,14 +13,7 @@ export interface Users {
     role?: string,
     _created?: Date
 }
-export interface Books {
-    id: number,
-    categoryid: number,
-    title: string,
-    author: string,
-    price: number,
-    _created: Date
-}
+
 export interface ReqUsers extends Request {
     user?: Users
 }
